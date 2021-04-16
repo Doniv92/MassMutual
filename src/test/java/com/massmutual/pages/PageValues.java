@@ -56,9 +56,12 @@ public class PageValues extends PageBase{
 			Assert.assertEquals(amountCount, count, "Amounts -> Expected Count "+count+ "| Acutal Count: "+amountCount);
 			
 			// To verify label text (Value 1, Value 2, Value 3, Value 4, Value 5)
+			int expectedNumberInLabel=0;
 			for (int i=0; i<labelCount; i++) {
 				String label = listLabels.get(i).getText().trim();
-				Assert.assertEquals(label, "Value "+i, "Label -> Expected: Value "+i+ "| Acutal: "+label);
+				expectedNumberInLabel=i+1;
+				Assert.assertEquals(label, "Value "+expectedNumberInLabel,
+						"Label -> Expected: Value "+expectedNumberInLabel+ "| Acutal: "+label);
 			}
 			
 		} catch (Exception e) {
